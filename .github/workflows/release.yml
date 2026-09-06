@@ -39,7 +39,7 @@ on:
         description: 'Version name (default is ref name)'
 
 env:
-  CHALK_ON: ${{ github.event_name == 'workflow_dispatch' && inputs.leg != 'baseline' }}
+  CHALK_ON: ${{ inputs.leg == 'instrumented' }}
   # $VERSION is used by release scripts
   VERSION: ${{ github.event.inputs.name || github.ref_name }}
 
